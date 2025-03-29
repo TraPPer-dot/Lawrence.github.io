@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar System with Textures</title>
+    <script src="script/aframe.min.js"></script>
+    
+  </head>
+  <body>
+    <a-scene>
+      <!-- Preload planet textures -->
+      <a-assets>
+        <img id="Sun" src="texture/2k_sun.jpg" />
+        <img id="Mercury" src="texture/2k_mercury.jpg" />
+        <img id="Venus" src="texture/2k_venus_surface.jpg" />
+        <img id="Earth" src="texture/2k_earth_daymap.jpg" />
+        <img id="Mars" src="texture/2k_mars.jpg" />
+        <img id="Jupiter" src="texture/2k_jupiter.jpg" />
+        <img id="Saturn" src="texture/2k_saturn.jpg" />
+        <img id="Saturn" src="texture/2k_saturn_ring_alpha.png" />
+        <img id="Uranus" src="texture/2k_uranus.jpg" />
+        <img id="Neptune" src="texture/2k_neptune.jpg" />
+      </a-assets>
+      
+      <a-sky src="texture/2k_stars_milky_way.jpg"
+          material="normal-map:#stars">
+    </a-sky>  
+    <!-- Orbit Paths -->
+        
+      
+      
+
+      <!-- Sun -->
+      <a-entity position="0 0 0">    
+        <a-sphere id="sun" position="0 1.25 -5" radius="1.5" src="#Sun"></a-sphere>
+      </a-entity>
+      
+     
+        
+      <!-- Mercury Orbit (Fastest) -->
+      <a-entity position="0 0 0">
+      
+        <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 8800">
+          <a-sphere id="mercury" position="3 0 0" radius="0.1" src="#Mercury"></a-sphere>
+        </a-entity>
+      </a-entity>
+
+      <!-- Venus Orbit -->
+      <a-entity position="0 0 0">
+        <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 22400">
+          <a-sphere id="venus" position="5 0 0" radius="0.2" src="#Venus"></a-sphere>
+        </a-entity>
+      </a-entity>
+
+      <!-- Earth Orbit with Moon -->
+     <a-entity position="0 0 0">
+       <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 36500">
+        <a-entity position="7 0 0">
+          <a-sphere id="earth" radius="0.3" src="#Earth"></a-sphere>
+          <!-- Moon -->
+          <a-sphere id="moon" position="0.5 0 0" radius="0.1" src="texture/2k_moon.jpg"
+            animation="property: position; to: -0.5 0 0; loop: true; dur: 2700"></a-sphere>
+        </a-entity>
+      </a-entity>
+       
+      <a-entity>
+        </a-entity>
+
+      <!-- Mars Orbit -->
+      <a-entity position ="0 0 0">
+        <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 68700">
+        <a-sphere id="mars" position="9 0 0" radius="0.4" src="#Mars"></a-sphere>
+      </a-entity>
+       </a-entity> 
+       </a-entity>
+       
+      
+
+      <!-- Jupiter Orbit -->
+    <a-entity position="0 0 0">
+      <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 69500">
+        <a-sphere id="jupiter" position="17 0 0" radius="0.9" src="#Jupiter"></a-sphere>
+      </a-entity>
+      </a-entity>  
+  
+      <!-- Saturn Orbit -->
+    
+      <a-entity position="0 0 0">
+        <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 72500">
+        <a-sphere id="saturn" position="28 0 0" radius="0.9" src="#Saturn"></a-sphere>
+      </a-entity>
+      </a-entity>
+
+      <!-- Uranus Orbit -->
+      <a-entity position="0 0 0">
+        <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 88900">
+        <a-sphere id="uranus" position="40 0 0" radius="0.6" src="#Uranus"></a-sphere>
+      </a-entity>
+      </a-entity>
+      
+    
+
+      <!-- Neptune Orbit (Slowest) -->
+      <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur:105500">
+        <a-sphere id="neptune" position="55 0 0" radius="0.7" src="#Neptune"></a-sphere>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
